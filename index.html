@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input {
+            padding: 7px;
+            width: 350px;
+            height: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 450px;
+            align-items: center;
+        }
+
+        button {
+            width: 100px;
+            border-radius: 5px;
+            height: 40px;
+
+        }
+        .container{
+            display: flex;
+            gap: 25px;
+        }
+        .container-form1{
+            position: sticky;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-form1">
+            <h1>person details entry</h1>
+            <form action="" id="stockForm">
+                <input type="text" id="companyName" placeholder="person name" required>
+                <input type="email" id="currentPrice" placeholder="email" required>
+                <button type="submit" id="myBtn" onclick="saveOrUpdate()">Save</button>
+            </form>
+        </div>
+        <div class="container-form">
+            <h1>person List</h1>
+            <table id="stockTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>action</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js">  </script>
+</body>
+
+</html>
