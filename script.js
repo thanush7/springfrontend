@@ -1,3 +1,4 @@
+const uri="https://springcrudone.onrender.com";
 let updateindex = 0;
 function saveOrUpdate() {
     if (document.getElementById('myBtn').innerHTML === 'Save') {
@@ -7,7 +8,7 @@ function saveOrUpdate() {
     }
 }
 async function edit(id) {
-    const response = await fetch(`http://localhost:8080/person/getone/${id}`);
+    const response = await fetch(`${uri}/person/getone/${id}`);
     document.getElementById('myBtn').innerHTML = 'update';
     const stock = await response.json();
     document.getElementById('companyName').value = stock.uname;
@@ -16,7 +17,7 @@ async function edit(id) {
 }
 async function update() {
     console.log("update called");
-    await fetch(`http://localhost:8080/person/edit/${updateindex}`, {
+    await fetch(`${uri}/person/edit/${updateindex}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -33,7 +34,7 @@ async function update() {
 async function deleteE(id) {
     // const confirmed = confirm("Are you sure you want to delete?");
     // if (confirmed) {
-        fetch(`http://localhost:8080/person/delete/${id}`, {
+        fetch(`${uri}/person/delete/${id}`, {
             method: 'DELETE',
         })
             .then(response => {
@@ -61,7 +62,7 @@ function additem() {
         };
 
         try {
-            const response = await fetch('http://localhost:8080/person/add', {
+            const response = await fetch(`${uri}/person/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -86,7 +87,7 @@ function additem() {
 
 async function fetchStockData() {
     try {
-        const response = await fetch('http://localhost:8080/person/details');
+        const response = await fetch(`${uri}/person/details`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
